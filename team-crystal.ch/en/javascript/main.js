@@ -21,7 +21,7 @@ function dropdown() {
     }
 }
 
-function dropdown_animation() { //lines turn by 90° (more or less)
+function dropdown_animation() { //lines turn by 90° (more or less) animation for dropping menu down (duh)
     var ddn = document.getElementById("dropdown");
     var sb = document.getElementById("selectionbar");
     var top = sb.clientHeight / 90;
@@ -37,7 +37,7 @@ function dropdown_animation() { //lines turn by 90° (more or less)
     }
 }
 
-function goup_animation() { //lines turn by 90° (more or less)
+function goup_animation() { //lines turn by 90° (more or less) animation for going up with the menu (duh)
     var ddn = document.getElementById("dropdown");
     var sb = document.getElementById("selectionbar");
     var top = sb.clientHeight / 90;
