@@ -52,26 +52,3 @@ function goup_animation() { //lines turn by 90° (more or less) animation for go
         interval_1 = undefined;
     }
 }
-
-    // let v_x1_dl1 = 
-    // let dl1 = document.getElementById("dropdown_line_1");
-    // let dl2 = document.getElementById("dropdown_line_2");
-    // let dl3 = document.getElementById("dropdown_line_3");
-    // First line
-
-    // Last line
-
-    // Middle Line
-
-
-
-    // function attribute_setter(dl) {
-    //     temp_value = Number(dl.getAttribute("x1"));
-    //     dl.setAttribute("x1", temp_value - step);
-    //     temp_value = Number(dl.getAttribute("y1"));
-    //     dl.setAttribute("y1", temp_value + step);
-    //     temp_value = Number(dl.getAttribute("x2"));
-    //     dl.setAttribute("x2", temp_value + step);
-    //     temp_value = Number(dl.getAttribute("y2"));
-    //     dl.setAttribute("y2", temp_value - step);
-    // }
