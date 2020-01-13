@@ -48,7 +48,7 @@ nav {
     fill: tomato;
 }
 
-#selectionbar {
+#selectionbar_mobile {
     border-collapse: collapse;
     border-spacing: 0px 0px;
     position: fixed;
@@ -66,8 +66,12 @@ nav {
     /* Idee wie gestalten von Abigail in Informatik Notizbuch */
 }
 
+#selectionbar_desktop {
+    position: fixed;
+    top: 120px;
+}
+
 .linktree {
-    
     color: whitesmoke;
     background-color: rgb(43, 147, 189, 0.8);
     /* background: radial-gradient(circle,#2BB5BD,#15F4FF); */
