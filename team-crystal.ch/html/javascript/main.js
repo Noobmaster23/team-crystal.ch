@@ -9,11 +9,8 @@ function loaded() { //waits until the page is loaded, important for functions th
     ddn.addEventListener("click", dropdown);
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) { //checks if the website is used on a mobile devise
         is_mobile = true;
-        var sb = document.getElementById("selectionbar_desktop");
-        sb.style.display = "none";
     } else {
-        var sb = document.getElementById("selectionbar_mobile");
-        sb.style.display = "none"
+        is_mobile = false;
     }
 }
 
@@ -32,12 +29,19 @@ function dropdown() {
 
 function dropdown_animation() { //turning animation and shows the menu
     var ddn = document.getElementById("dropdown");
-    var sb = document.getElementById("selectionbar_mobile");
-    var top = sb.clientHeight / 90;
-    var temp_number = 120 - sb.clientHeight + top * counter_1;
+    var sbm = document.getElementById("selectionbar_mobile");
+    var sbd = document.getElementById("selectionbar_desktop");
     if (is_mobile) { //if mobile device, do nothing to this
-        sb.style.top = String(temp_number) + "px";
-        sb.style.display = "initial";
+        var top = sbm.clientHeight / 90;
+        var temp_number = 120 - sbm.clientHeight + top * counter_1;
+        sbm.style.top = String(temp_number) + "px";
+        sbm.style.display = "initial";
+    }
+    else {
+        var top = sbd.clientHeight / 90;
+        var temp_number = 120 - sbd.clientHeight + top * counter_1;
+        sbd.style.top = String(temp_number) + "px";
+        sbd.style.display = "initial";
     }
     ddn.style.transform = "rotate(" + counter_1 + "deg)";
     counter_1++;
@@ -50,17 +54,23 @@ function dropdown_animation() { //turning animation and shows the menu
 
 function goup_animation() { //turning animation and shows the menu
     var ddn = document.getElementById("dropdown");
-    var sb = document.getElementById("selectionbar_mobile");
-    var top = sb.clientHeight / 90;
-    var temp_number = 120 - top * counter_1;
+    var sbm = document.getElementById("selectionbar_mobile");
+    var sbd = document.getElementById("selectionbar_desktop");
     if (is_mobile) { //if mobile device, do nothing to this
-        sb.style.top = String(temp_number) + "px";
+        var top = sbm.clientHeight / 90;
+        var temp_number = 120 - top * counter_1;
+        sbm.style.top = String(temp_number) + "px";
+    }
+    else { 
+        var top = sbd.clientHeight / 90;
+        var temp_number = 120 - top * counter_1;
+        sbd.style.top = String(temp_number) + "px";
     }
     ddn.style.transform = "rotate(" + (90 - counter_1) + "deg)";
     counter_1++;
     if (counter_1 >= 90) {
         counter_1 = 0;
-        sb.style.display = "none";
+        sbm.style.display = "none";
         clearInterval(interval_1);
         interval_1 = undefined;
     }

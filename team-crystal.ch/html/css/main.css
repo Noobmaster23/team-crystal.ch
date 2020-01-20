@@ -1,16 +1,31 @@
+a:link {
+    text-decoration: none;
+    /* color: #293C42; */
+    color: whitesmoke;
+}
+
+a:visited {
+    text-decoration: none;
+    /* color: #293C42; */
+    color: whitesmoke;
+}
+
+a:active {
+    text-decoration: none;
+    /* color: #293C42; */
+    color: whitesmoke;
+}
+
 .linktree a:link {
     color: whitesmoke;
-    text-decoration: none;
 }
 
 .linktree a:visited {
     color: whitesmoke;
-    text-decoration: none;
 }
 
 .linktree a:active {
     color: whitesmoke;
-    text-decoration: none;
 }
 
 /*.linktree a:hover {
@@ -63,12 +78,22 @@ nav {
     margin-left: 0px;
     padding-left: 0px;
     border-left: 0px;
-    /* Idee wie gestalten von Abigail in Informatik Notizbuch */
 }
 
 #selectionbar_desktop {
+    z-index: -1;
+    display: none;
     position: fixed;
     top: 120px;
+    width: 100%;
+    background-color: #008CB8;
+}
+
+#selectionbar_desktop a {
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+    font-size: xx-large;
 }
 
 .linktree {
