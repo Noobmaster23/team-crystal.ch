@@ -3,6 +3,7 @@ var counter_1 = 0;
 var interval_1;
 var is_dropdown = false;
 var is_mobile;
+var in_animation = false;
 
 function loaded() { //waits until the page is loaded, important for functions that need the content of the page (when the page is not fully loaded, it doesn't detect everything)
     var ddn = document.getElementById("dropdown");
@@ -15,19 +16,23 @@ function loaded() { //waits until the page is loaded, important for functions th
 }
 
 function dropdown() {
-    if (is_dropdown == false) {
-        counter_1 = 0;
-        interval_1 = setInterval(dropdown_animation, 1);
-        is_dropdown = true;
-    }
-    else {
-        counter_1 = 0;
-        interval_1 = setInterval(goup_animation, 1);
-        is_dropdown = false;
+    if (in_animation == false) {
+        if (is_dropdown == false) {
+            counter_1 = 0;
+            interval_1 = setInterval(dropdown_animation, 1);
+            is_dropdown = true;
+        }
+        else {
+            counter_1 = 0;
+            interval_1 = setInterval(goup_animation, 1);
+            is_dropdown = false;
+        }
+
     }
 }
 
 function dropdown_animation() { //turning animation and shows the menu
+    in_animation = true;
     var ddn = document.getElementById("dropdown");
     var sbm = document.getElementById("selectionbar_mobile");
     var sbd = document.getElementById("selectionbar_desktop");
@@ -49,10 +54,12 @@ function dropdown_animation() { //turning animation and shows the menu
         counter_1 = 0;
         clearInterval(interval_1);
         interval_1 = undefined;
+        in_animation = false;
     }
 }
 
 function goup_animation() { //turning animation and shows the menu
+    in_animation = true;
     var ddn = document.getElementById("dropdown");
     var sbm = document.getElementById("selectionbar_mobile");
     var sbd = document.getElementById("selectionbar_desktop");
@@ -61,7 +68,7 @@ function goup_animation() { //turning animation and shows the menu
         var temp_number = 120 - top * counter_1;
         sbm.style.top = String(temp_number) + "px";
     }
-    else { 
+    else {
         var top = sbd.clientHeight / 90;
         var temp_number = 120 - top * counter_1;
         sbd.style.top = String(temp_number) + "px";
@@ -73,5 +80,6 @@ function goup_animation() { //turning animation and shows the menu
         sbm.style.display = "none";
         clearInterval(interval_1);
         interval_1 = undefined;
+        in_animation = false;
     }
 }
