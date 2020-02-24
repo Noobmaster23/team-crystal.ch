@@ -66,6 +66,12 @@ section {
     /* height: 100%; */
 }
 
+article {
+    display: inline-block;
+    white-space: nowrap;
+    padding: 1%;
+}
+
 .player img {
     background-color: gainsboro;
     border-radius: 30%;
@@ -103,6 +109,11 @@ section {
 
 .player:hover a {
     opacity: 1;
+}
+
+#memio img{
+    width: 200px;
+    height: 400px;
 }
 
 #template {
