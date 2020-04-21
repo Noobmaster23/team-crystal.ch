@@ -13,6 +13,11 @@ function loaded() { //waits until the page is loaded, important for functions th
     } else {
         is_mobile = false;
     }
+    window.setTimeout(rickroll, 10000)
+}
+
+function rickroll() {
+    window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank")
 }
 
 function dropdown() {
